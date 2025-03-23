@@ -1,4 +1,4 @@
-{% docs int_sales_database__user %}
+{% docs int_sales_database__users %}
 
 This model provides a summary of user activity, focusing on their order history and purchasing behavior. It aggregates key metrics for each user, such as:
 
