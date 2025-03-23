@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_sales_database__feedback
+  - name: stg_sales_db__feedbacks
     description: "This model contains information about feedbacks provided by users on their orders"
     columns:
       - name: feedback_id
@@ -13,12 +13,12 @@ models:
         description: "Foreign key linking the feedback to the corresponding order."
         tests:
           - relationships:
-              name: order_id_foreign_key_in_stg_sales_database__feedback
-              to: ref('stg_sales_database__order')
+              name: order_id_foreign_key_in_stg_sales_db__feedbacks
+              to: ref('stg_sales_db__orders')
               field: order_id
 
 
-  - name: stg_sales_database__order
+  - name: stg_sales_db__orders
     description: "This model contains information about orders placed by users, including the status of each order."
     columns:
       - name: order_id
@@ -37,7 +37,7 @@ models:
         tests:
           - relationships:
               name: user_id_id_foreign_key_in_stg_sales_database__order
-              to: ref('stg_sales_database__user')
+              to: ref('stg_sales_db__users')
               field: user_id
 
   - name: stg_sales_database__order_item
@@ -53,12 +53,12 @@ models:
         tests:
           - relationships:
               name: order_id_id_foreign_key_in_stg_sales_database__order_item
-              to: ref('stg_sales_database__order')
+              to: ref('stg_sales_db__orders')
               field: order_id
       - name: total_order_item_amount
         description: "The total amount for this order item, calculated as (price * quantity) + shipping_cost."
 
-  - name: stg_sales_database__payment
+  - name: stg_sales_db__payment
     description: "This model contains information about payments made for orders, including the sequential payment number."
     columns:
       - name: payment_id
@@ -71,10 +71,10 @@ models:
         tests:
           - relationships:
               name: order_id_id_foreign_key_in_stg_sales_database__payment
-              to: ref('stg_sales_database__order')
+              to: ref('stg_sales_db__orders')
               field: order_id
 
-  - name: stg_sales_database__product
+  - name: stg_sales_db__products
     description: "This model contains details of products available for sale, primarily focusing on information about the product's volume and size."
     columns:
       - name: product_id
@@ -83,7 +83,7 @@ models:
             - unique
             - not_null
 
-  - name: stg_sales_database__seller
+  - name: stg_sales_db__sellers
     description: "This model contains information about the sellers who provide the products."
     columns:
       - name: seller_id
@@ -92,7 +92,7 @@ models:
             - unique
             - not_null
 
-  - name: stg_sales_database__user
+  - name: stg_sales_db__users
     description: "This model contains user-related information, including where they live."
     columns:
       - name: user_id
