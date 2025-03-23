@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: int_sales_database__order
-    description: '{{ doc("int_sales_database__order") }}'
+    description: '{{ doc("int_sales_database__orders") }}'
     columns:
       - name: order_id
         description: "Primary key, unique identifier for each order."
