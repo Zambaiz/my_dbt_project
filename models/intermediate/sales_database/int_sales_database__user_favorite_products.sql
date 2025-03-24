@@ -1,7 +1,7 @@
 SELECT
 user_id,
 product_id AS favorite_product_id
-FROM {{ ref('int_sales_database__order_items') }}
+FROM {{ ref('int_sales_db__order_items') }}
 GROUP BY
 user_id,
 product_id

@@ -40,7 +40,7 @@ models:
               to: ref('stg_sales_db__users')
               field: user_id
 
-  - name: stg_sales_database__order_item
+  - name: stg_sales_db__order_items
     description: "This model contains information about each item included in an order, including its price, quantity, and shipping cost."
     columns:
       - name: order_item_id
