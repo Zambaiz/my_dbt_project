@@ -58,7 +58,7 @@ models:
       - name: total_order_item_amount
         description: "The total amount for this order item, calculated as (price * quantity) + shipping_cost."
 
-  - name: stg_sales_db__payment
+  - name: stg_sales_db__payments
     description: "This model contains information about payments made for orders, including the sequential payment number."
     columns:
       - name: payment_id
