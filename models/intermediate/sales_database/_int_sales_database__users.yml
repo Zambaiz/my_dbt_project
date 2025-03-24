@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: int_sales_database__user
+  - name: int_sales_db__users
     description: '{{ doc("int_sales_db__users") }}'
     columns:
       - name: user_id
